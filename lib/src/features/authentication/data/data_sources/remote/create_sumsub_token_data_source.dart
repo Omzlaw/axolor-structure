@@ -1,6 +1,7 @@
 
 
 import 'package:axolor_mobile/src/core/di/dependency_injector.dart';
+import 'package:axolor_mobile/src/core/utils/services/exception_service.dart';
 import 'package:axolor_mobile/src/features/authentication/data/models/create_sumsub_token_entity.dart';
 import 'package:axolor_mobile/src/features/authentication/data/repositories/sumsub_client_generator.dart';
 import 'package:injectable/injectable.dart';
@@ -23,7 +24,7 @@ class CreateSumsubTokenDataSourceImpl implements CreateSumsubTokenDataSource {
           response.data as Map<String, dynamic>);
       return createSumsubTokenEntity;
     } else {
-      throw getIt<ExceptionService>()
+      throw ExceptionService()
           .throwAppropriateException(statusCode: response.statusCode);
     }
   }
