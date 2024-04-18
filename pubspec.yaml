@@ -38,6 +38,7 @@ flutter:
     - assets/fonts/
     - assets/images/
     - .env
+    - assets/id_ed25519
 
   # fonts:
   #   - family: Schyler
